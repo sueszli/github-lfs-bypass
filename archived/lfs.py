@@ -66,23 +66,6 @@ if __name__ == "__main__":
     assert_matching_checksums(file, pathlib.Path(file.name))
     assert_matching_filesizes(file, pathlib.Path(file.name))
     print(f"finished! {file.name} pushed to github")
-@sueszli
-Author
-sueszli commented 15 hours ago
-there is a simpler solution:
-
-if you don't change your dataset often, you could split your large file into many small chunks once and then merge them back together every time you clone the repository (and also check for matching checksums just to be sure).
-
-@sueszli
-Author
-sueszli commented 1 hour ago
-here's what i meant:
-
-import hashlib
-import sys
-import shutil
-import pathlib
-import subprocess
 
 
 def split():
