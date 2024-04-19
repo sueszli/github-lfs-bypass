@@ -11,6 +11,8 @@
 \____||__|_____|__|
 ```
 
+<br>
+
 github commits are restricted to 25-50 MiB, varying based on the push method [^1].
 
 to handle files beyond this limit, git lfs (large file storage) pointers are necessary, referencing an external lfs server [^2].
