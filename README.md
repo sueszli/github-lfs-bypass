@@ -27,7 +27,7 @@ the scripts provided in this repository allow you to bypass the file size limit 
 
 <br><br>
 
-> _ethical concerns_
+> _ethical concerns:_
 > 
 > i recognize that the methods outlined in this project raise ethical questions surrounding the potential for freeriding on github's generosity. my primary goal is not to exploit the platform, but rather to facilitate more reproducible data-driven research. i apologize for the clickbaity title.
 > 
