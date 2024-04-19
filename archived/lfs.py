@@ -183,9 +183,5 @@ def merge():
 
 
 if __name__ == "__main__":
-    """
-    step 1) split once: split a large file into chunks and then push them to github to bypass the 100mb limit.
-    step 2) merge on every clone: merge the chunks back into the original file.
-    """
     split()
     # merge()
