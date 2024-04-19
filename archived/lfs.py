@@ -148,7 +148,7 @@ def split():
     # upload checksum file
     shutil.copy(tmp_dir_path / f"{filepath.name}.md5", data_dir_path)
     subprocess.run(["git", "add", data_dir_path / f"{filepath.name}.md5"])
-    subprocess.run(["git", "commit", "-m", f"lfs-hack auto commit: {filepath.name}.md5"])
+    subprocess.run(["git", "commit", "-m", f"auto commit: {filepath.name}.md5"])
     subprocess.run(["git", "push"])
     print(f"finished pushing checksum file")
 
