@@ -4,11 +4,6 @@ if [ ! -f $file_path ]; then echo "file not found"; exit 1; fi
 if [ ! -s $file_path ]; then echo "file is empty"; exit 1; fi
 echo "file found: $file_path"
 
-# validate .gitignore
-if [ ! -f .gitignore ]; then echo ".gitignore not found"; exit 1; fi
-if ! grep -q "tmp/" .gitignore; then echo "tmp/ not found in .gitignore"; exit 1; fi
-if ! grep -q "data-merged/" .gitignore; then echo "data-merged/ not found in .gitignore"; exit 1; fi
-
 # create tmp directory
 rm -rf tmp
 mkdir tmp
@@ -49,6 +44,9 @@ for chunk in tmp/$(basename $file_path)-chunk-*; do
 
     echo "🟢 pushed $(basename $chunk) $progress_str"
 done
+
+# delete tmp directory
+rm -rf tmp
 
 echo "🟢 done"
 exit 0
