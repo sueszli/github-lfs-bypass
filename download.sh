@@ -1,7 +1,7 @@
 # validate .gitignore
 if [ ! -f .gitignore ]; then echo ".gitignore not found"; exit 1; fi
-if ! grep -q "tmp/" .gitignore; then echo "tmp/ not in .gitignore"; exit 1; fi
-if ! grep -q "data-merged/" .gitignore; then echo "data-merged/ not in .gitignore"; exit 1; fi
+if ! grep -q "tmp/" .gitignore; then echo "tmp/ not found in .gitignore"; exit 1; fi
+if ! grep -q "data-merged/" .gitignore; then echo "data-merged/ not found in .gitignore"; exit 1; fi
 
 # validate ./data/* files
 if [ ! -d data ]; then echo "data/ directory not found"; exit 1; fi
