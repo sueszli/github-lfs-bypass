@@ -11,18 +11,6 @@
 \____||__|_____|__|
 ```
 
-```bash
-# 1. copy all shell scripts and the `.gitignore` file to your github repository.
-
-# 2. run the `lfs-split.sh` script, to push `huge-file.tar` from outside the repository as many small chunks.
-./lfs-split.sh ./../huge-file.tar
-
-# 3. then each time you clone the project, run the `lfs-merge.sh` script.
-./lfs-split.sh
-```
-
-<br><br>
-
 github commits are restricted to 25-50 MiB, varying based on the push method [^1].
 
 to handle files beyond this limit, git lfs (large file storage) pointers are necessary, referencing an external lfs server [^2].
@@ -31,11 +19,40 @@ however, this method incurs a monthly cloud storage fee to github [^3].
 
 the scripts provided in this repository allow you to bypass the file size limit by committing a large file in small chunks.
 
-- **split script:** takes a large file as an argument, splits the file into smaller chunks of a specified size (50mb in this case) and stores these chunks in a temporary directory. each chunk is then pushed to a remote repository → it is ran just once, when initializing the project.
-
-- **merge script:** concatenates all the chunks into a single file and checks the checksum of the merged file against the original checksum to ensure the file has not been corrupted during the whole process → it is ran on each clone.
 
 <br><br>
+
+## how to use
+
+**1) split script:** ran just once, when initializing the project.
+
+takes a large file as an argument, splits the file into smaller chunks of a specified size (50mb in this case) and stores these chunks in a temporary directory. each chunk is then pushed to a remote repository.
+
+```bash
+# chunk `huge-file.tar` and push to repository
+chmod +x lfs-split.sh
+./lfs-split.sh ./../huge-file.tar
+```
+
+**2) merge script:** ran on each clone.
+
+concatenates all the chunks into a single file and checks the checksum of the merged file against the original checksum to ensure the file has not been corrupted during the whole process → it is 
+
+```bash
+git clone <your-project>
+
+# merge chunks
+chmod +x lfs-merge.sh
+./lfs-merge.sh
+
+# untar merged chunks
+tar -xf data-merged/merged.tar -C data-merged
+rm -f data-merged/merged.tar
+```
+
+<br><br>
+
+## footnotes
 
 > _ethical concerns:_
 > 
