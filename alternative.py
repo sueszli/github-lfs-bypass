@@ -3,11 +3,10 @@ import sys
 import pathlib
 import subprocess
 
-
 """
-this is an alternative implementation in python.
+here's an alternative implementation in python.
 
-i chose to rewrite it in bash because it's: simpler, faster, more robust
+it's more portable but a lot slower.
 """
 
 
