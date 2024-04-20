@@ -7,6 +7,8 @@ import subprocess
 here's an alternative implementation in python.
 
 it's portable but a lot slower.
+
+haven't tested it yet - might need some tweaking.
 """
 
 
