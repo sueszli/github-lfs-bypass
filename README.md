@@ -21,9 +21,9 @@ the scripts provided in this repository allow you to bypass the file size limit 
 
 <br><br>
 
-## how to use
+## 1) upload
 
-**1) split script:** ran just once, when initializing the project.
+ran just once, when initializing the project.
 
 takes a large file as an argument, splits the file into smaller chunks of a specified size (50mb in this case) and stores these chunks in a temporary directory. each chunk is then pushed to a remote repository.
 
@@ -33,7 +33,9 @@ chmod +x lfs-split.sh
 ./lfs-split.sh ./../huge-file.tar
 ```
 
-**2) merge script:** ran on each clone.
+## 2) download
+
+merge script, ran on each clone.
 
 concatenates all the chunks into a single file and checks the checksum of the merged file against the original checksum to ensure the file has not been corrupted during the whole process → it is 
 
