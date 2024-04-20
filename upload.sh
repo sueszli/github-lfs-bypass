@@ -1,5 +1,3 @@
-# call this script with ./../big-file.tar on project initialization
-
 file_path=$1
 if [ -z $file_path ]; then echo "file path not given"; exit 1; fi
 if [ ! -f $file_path ]; then echo "file not found"; exit 1; fi
