@@ -19,27 +19,27 @@ however, this method incurs a monthly cloud storage fee to github [^3].
 
 the scripts provided in this repository allow you to bypass the file size limit by committing a large file in small chunks.
 
-**🔺 uploading to github:**
+- **🔺 uploading to github:**
+  
+  ```bash
+  # chunk large file and push to remote github repository
+  ./upload.sh ./../huge-file.tar
+  ```
 
-```bash
-# chunk large file and push to remote github repository
-./upload.sh ./../huge-file.tar
-```
+- **🔻 downloading from github:**
 
-**🔻 downloading from github:**
-
-```bash
-# clone
-git clone https://github.com/user/project
-
-# merge chunks back together, verify checksum
-./download.sh
-
-# untar (or any other decompression)
-tar -xf data-merged/merged.tar -C data-merged
-rm -f data-merged/merged.tar
-```
-
+  ```bash
+  # clone
+  git clone https://github.com/user/project
+  
+  # merge chunks back together, verify checksum
+  ./download.sh
+  
+  # untar (or any other decompression)
+  tar -xf data-merged/merged.tar -C data-merged
+  rm -f data-merged/merged.tar
+  ```
+ 
 <br><br>
 
 ## footnotes
