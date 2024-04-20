@@ -3,15 +3,25 @@
 |  :           :  | chunk files.
 |  :           :  | avoid github cloud storage bills.
 |  :           :  | 
-|  :           :  |
-|  :___________:  |
-|     _________   |
+|  :           :  | 
+|  :___________:  | 
+|     _________   | 
 |    | __      |  |
 |    ||  |     |  |
 \____||__|_____|__|
 ```
 
-<br>
+```bash
+# 1. copy all shell scripts and the `.gitignore` file to your github repository.
+
+# 2. run the `lfs-split.sh` script, to push `huge-file.tar` from outside the repository as many small chunks.
+./lfs-split.sh ./../huge-file.tar
+
+# 3. then each time you clone the project, run the `lfs-merge.sh` script.
+./lfs-split.sh
+```
+
+<br><br>
 
 github commits are restricted to 25-50 MiB, varying based on the push method [^1].
 
