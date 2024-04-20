@@ -21,20 +21,20 @@ the scripts provided in this repository allow you to bypass the file size limit 
 
 <br><br>
 
-**🔺 uploading:** chunk and push to remote github repository.
+**🔺 uploading to github:**
 
 ```bash
-# chunk file, push each chunk
+# chunk large file and push to remote github repository
 ./upload.sh ./../huge-file.tar
 ```
 
-**🔻 downloading:** merge chunks, verify checksum.
+**🔻 downloading from github:**
 
 ```bash
 # clone
 git clone https://github.com/user/project
 
-# merge chunks back together
+# merge chunks back together, verify checksum
 ./download.sh
 
 # untar (or any other decompression)
