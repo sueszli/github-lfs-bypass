@@ -19,8 +19,6 @@ however, this method incurs a monthly cloud storage fee to github [^3].
 
 the scripts provided in this repository allow you to bypass the file size limit by committing a large file in small chunks.
 
-<br><br>
-
 **🔺 uploading to github:**
 
 ```bash
