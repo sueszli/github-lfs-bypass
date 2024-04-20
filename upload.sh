@@ -1,5 +1,6 @@
+# read user argument
 file_path=$1
-if [ -z $file_path ]; then echo "file path not given"; exit 1; fi
+if [ -z $file_path ]; then echo "no argument given - provide file path"; exit 1; fi
 if [ ! -f $file_path ]; then echo "file not found"; exit 1; fi
 if [ ! -s $file_path ]; then echo "file is empty"; exit 1; fi
 echo "file found: $file_path"

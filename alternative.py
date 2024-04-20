@@ -4,11 +4,9 @@ import pathlib
 import subprocess
 
 """
-here's an alternative implementation in python.
+alternative python implementation:
 
-it's portable but a lot slower.
-
-haven't tested it yet - might need some tweaking.
+portable but a lot slower and doesn't behave exactly like the shell script.
 """
 
 

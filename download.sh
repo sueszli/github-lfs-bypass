@@ -1,6 +1,8 @@
-# validate .gitignore
-if [ ! -f .gitignore ]; then echo ".gitignore not found"; exit 1; fi
-if ! grep -q "data-merged/" .gitignore; then echo "data-merged/ not found in .gitignore"; exit 1; fi
+# touch .gitignore if it doesn't exist
+if [ ! -f .gitignore ]; then touch .gitignore; fi
+
+# add data-merged/ to .gitignore if not already present
+if ! grep -q "data-merged/" .gitignore; then echo "data-merged/" >> .gitignore; fi
 
 # validate ./data/* files
 if [ ! -d data ]; then echo "data/ directory not found"; exit 1; fi
