@@ -6,7 +6,7 @@ import subprocess
 """
 here's an alternative implementation in python.
 
-it's more portable but a lot slower.
+it's portable but a lot slower.
 """
 
 
