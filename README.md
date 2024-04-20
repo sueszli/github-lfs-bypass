@@ -19,9 +19,7 @@ however, this method incurs a monthly cloud storage fee to github [^3].
 
 the scripts provided in this repository allow you to bypass the file size limit by committing a large file in small chunks.
 
-<br><br>
-
-## upload
+## 📈 upload
 
 takes a large file as an argument, splits the file into smaller chunks of a specified size (50mb in this case) and stores these chunks in a temporary directory. each chunk is then pushed to a remote repository.
 
@@ -32,7 +30,7 @@ takes a large file as an argument, splits the file into smaller chunks of a spec
 
 <br><br>
 
-## download
+## 📉 download
 
 should be ran after each clone. concatenates all the chunks into a single file and checks the checksum of the merged file against the original checksum to ensure the file has not been corrupted during the whole process → it is 
 
