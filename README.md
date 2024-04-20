@@ -27,7 +27,7 @@ the scripts provided in this repository allow you to bypass the file size limit 
 ./upload.sh ./../super-larg-file.tar
 ```
 
-**downloading:** the download script should be run after each clone. concatenates all the chunks into a single file and checks the checksum of the merged file against the original checksum to ensure the file has not been corrupted during the whole process → it is 
+**downloading:** the download script should be run after each clone. concatenates all the chunks into a single file and checks the checksum of the merged file against the original checksum to ensure the file has not been corrupted during the whole process.
 
 ```bash
 # clone and merge chunks back together
