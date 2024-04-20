@@ -27,47 +27,6 @@ def assert_matching_filesizes(filepath1: pathlib.Path, filepath2: pathlib.Path) 
     print(f"file sizes match: {filesize1} == {filesize2}")
 
 
-if __name__ == "__main__":
-    file = pathlib.Path(sys.argv[1])
-
-    assert pathlib.Path(".git").exists(), "put this script inside the git directory you want to copy the file to"
-    assert file.exists(), f"file does not exist: {file}"
-    assert file.is_file(), f"not a file: {file}"
-    assert not any([sibling.name == ".git" for sibling in list(file.parent.glob("*"))]), f"{file} should not be in a .git directory"
-    filesize = file.stat().st_size
-    print(f"{file.name} size: {file.stat().st_size}")
-
-    print(f"copying and committing chunks to github...")
-    chunk_size = 30 * 1024 * 1024
-    num_chunks = (file.stat().st_size // chunk_size) + 1
-
-    with open(file.name, "wb") as f:
-        pass
-
-    for i in range(num_chunks):
-        with open(file, "rb") as f:
-            # read
-            f.seek(i * chunk_size)
-            chunk = f.read(chunk_size)
-            if not chunk:
-                print(f"no more chunks to read at iteration {i}")
-                break
-
-            # append to file in this directory
-            with open(file.name, "ab") as g:
-                g.write(chunk)
-
-            # push to github
-            subprocess.run(["git", "add", file.name])
-            subprocess.run(["git", "commit", "-m", f"git lfs exploit auto commit: {file.name} - {i}/{num_chunks}"])
-            subprocess.run(["git", "push"])
-            print(f"\033[92mprogress: {i}/{num_chunks} \033[0m")
-
-    assert_matching_checksums(file, pathlib.Path(file.name))
-    assert_matching_filesizes(file, pathlib.Path(file.name))
-    print(f"finished! {file.name} pushed to github")
-
-
 def split():
     filepath = pathlib.Path(sys.argv[1])
 
