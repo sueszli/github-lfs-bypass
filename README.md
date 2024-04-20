@@ -24,14 +24,17 @@ the scripts provided in this repository allow you to bypass the file size limit 
 **🔺 uploading:** the upload script takes a large file as an argument, splits the file into smaller chunks of a specified size (50mb in this case) and stores these chunks in a temporary directory. each chunk is then pushed to a remote repository.
 
 ```bash
+# chunk file, push each chunk
 ./upload.sh ./../huge-file.tar
 ```
 
 **🔻 downloading:** the download script should be run after each clone. concatenates all the chunks into a single file and checks the checksum of the merged file against the original checksum to ensure the file has not been corrupted during the whole process.
 
 ```bash
-# clone and merge chunks back together
+# clone
 git clone https://github.com/user/project
+
+# merge chunks back together
 ./download.sh
 
 # untar (or any other decompression)
