@@ -21,32 +21,27 @@ the scripts provided in this repository allow you to bypass the file size limit 
 
 <br><br>
 
-## 1) upload
-
-ran just once, when initializing the project.
+## upload
 
 takes a large file as an argument, splits the file into smaller chunks of a specified size (50mb in this case) and stores these chunks in a temporary directory. each chunk is then pushed to a remote repository.
 
 ```bash
-# chunk `huge-file.tar` and push to repository
-chmod +x lfs-split.sh
-./lfs-split.sh ./../huge-file.tar
+# upload
+./upload.sh ./../super-larg-file.tar
 ```
 
-## 2) download
+<br><br>
 
-merge script, ran on each clone.
+## download
 
-concatenates all the chunks into a single file and checks the checksum of the merged file against the original checksum to ensure the file has not been corrupted during the whole process → it is 
+should be ran after each clone. concatenates all the chunks into a single file and checks the checksum of the merged file against the original checksum to ensure the file has not been corrupted during the whole process → it is 
 
 ```bash
 git clone <your-project>
 
-# merge chunks
-chmod +x lfs-merge.sh
-./lfs-merge.sh
+./download.sh
 
-# untar merged chunks
+# untar (or any other decompression)
 tar -xf data-merged/merged.tar -C data-merged
 rm -f data-merged/merged.tar
 ```
