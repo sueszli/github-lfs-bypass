@@ -5,9 +5,9 @@ import subprocess
 
 
 """
-this is the python version of the script - but it wasn't as reliable as the bash version.
+this is an alternative implementation in python.
 
-i don't recommend using it.
+i chose to rewrite it in bash because it's: simpler, faster, more robust
 """
 
 
