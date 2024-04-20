@@ -27,7 +27,7 @@ def assert_matching_filesizes(filepath1: pathlib.Path, filepath2: pathlib.Path) 
     print(f"file sizes match: {filesize1} == {filesize2}")
 
 
-def split():
+def upload():
     filepath = pathlib.Path(sys.argv[1])
 
     assert pathlib.Path(".git").exists(), "put this script inside the git directory"
@@ -95,7 +95,7 @@ def split():
     print(f"finished pushing checksum file")
 
 
-def merge():
+def download():
     data_dir_path = pathlib.Path("data")
 
     assert data_dir_path.exists(), f"directory does not exist: {data_dir_path}"
@@ -125,5 +125,5 @@ def merge():
 
 
 if __name__ == "__main__":
-    split()
-    # merge()
+    upload()
+    # download()
