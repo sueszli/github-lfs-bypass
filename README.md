@@ -30,7 +30,7 @@ the scripts provided in this repository allow you to bypass the file size limit 
 
   ```bash
   # clone
-  git clone https://github.com/user/project
+  git clone https://github.com/<user>/<project>
   
   # merge chunks back together, verify checksum
   ./download.sh
