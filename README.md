@@ -22,22 +22,22 @@ the scripts provided in this repository allow you to bypass the file size limit 
 - **🔺 uploading to github:**
   
   ```bash
-  # chunk large file and push to remote github repository
-  ./upload.sh ./../huge-file.tar
+  # compress data outside of repository
+  tar -czvf merged.tar.gz <huge-directory/>
+  
+  # chunk and upload inside the repository
+  ./upload.sh ./../merged.tar.gz
   ```
 
 - **🔻 downloading from github:**
 
   ```bash
   # clone
-  git clone https://github.com/user/project
+  git clone <https://github.com/user/project>
+  cd <project>
   
   # merge chunks back together, verify checksum
   ./download.sh
-  
-  # untar (or any other decompression)
-  tar -xf data-merged/merged.tar -C data-merged
-  rm -f data-merged/merged.tar
   ```
 
 <br> 
