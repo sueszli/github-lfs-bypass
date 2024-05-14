@@ -21,5 +21,10 @@ actual_checksum=$(md5sum data-merged/merged.tar | awk '{ print $1 }')
 if [ $expected_checksum != $actual_checksum ]; then echo "checksum mismatch"; exit 1; fi
 echo "checksum matched: $expected_checksum == $actual_checksum"
 
+# untar in data-merged
+tar -xzf data-merged/merged.tar.gz -C data-merged
+rm data-merged/merged.tar.gz
+echo "untarred data-merged/merged.tar.gz"
+
 echo "🟢 done"
 exit 0
