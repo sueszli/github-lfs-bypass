@@ -1,7 +1,3 @@
-# check .gitignore
-if [! -f ".gitignore" ]; then echo ".gitignore file does not exist." && exit 1 fi
-grep -q "tmp\|data-merged".gitignore || { echo ".gitignore file does not contain 'tmp' or 'data-merged'." && exit 1 }
-
 # validate ./data/* files
 if [ ! -d data ]; then echo "data/ directory not found"; exit 1; fi
 if ! ls data/*-chunk-* &> /dev/null && ! ls data/*.md5 &> /dev/null; then echo "invalid files found in data/"; exit 1; fi
