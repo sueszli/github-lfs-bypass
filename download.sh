@@ -8,12 +8,12 @@ mkdir data-merged
 echo "created data-merged directory"
 
 # merge chunks into data-merged directory
-cat data/*-chunk-* > data-merged/merged.tar
-echo "merged chunks into data-merged/merged.tar"
+cat data/*-chunk-* > data-merged/merged.tar.gz
+echo "merged chunks into data-merged/merged.tar.gz"
 
 # validate checksum
 expected_checksum=$(cat data/*.md5)
-actual_checksum=$(md5sum data-merged/merged.tar | awk '{ print $1 }')
+actual_checksum=$(md5sum data-merged/merged.tar.gz | awk '{ print $1 }')
 if [ $expected_checksum != $actual_checksum ]; then echo "checksum mismatch"; exit 1; fi
 echo "checksum matched: $expected_checksum == $actual_checksum"
 
