@@ -6,8 +6,8 @@ if [ ! -s $file_path ]; then echo "file is empty"; exit 1; fi
 echo "file found: $file_path"
 
 # check .gitignore
-if [! -f ".gitignore" ]; then echo ".gitignore file does not exist." && exit 1 fi
-grep -q "tmp\|data-merged".gitignore || { echo ".gitignore file does not contain 'tmp' or 'data-merged'." && exit 1 }
+if [ ! -f ".gitignore" ]; then echo ".gitignore file does not exist."; exit 1; fi
+if ! grep -q "tmp\|data" .gitignore; then echo ".gitignore file does not contain 'tmp' or 'data'."; exit 1; fi
 echo "validated .gitignore"
 
 # create tmp directory
