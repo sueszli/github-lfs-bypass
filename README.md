@@ -1,7 +1,7 @@
 ```
  _________________
 |  :           :  | chunk files.
-|  :           :  | avoid github cloud storage bills.
+|  :           :  | get unlimited storage on github.
 |  :           :  | 
 |  :           :  | 
 |  :___________:  | 
