@@ -1,7 +1,7 @@
 ```
  _________________
 |  :           :  | chunk files.
-|  :           :  | get unlimited storage on github.
+|  :           :  | get unlimited free storage on github.
 |  :           :  | 
 |  :           :  | 
 |  :___________:  | 
