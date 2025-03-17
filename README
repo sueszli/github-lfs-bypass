@@ -1,0 +1,38 @@
+store unlimited large files on github for free.
+ _________________
+|  :           :  | 
+|  :           :  | 
+|  :           :  | 
+|  :           :  | 
+|  :___________:  | 
+|     _________   | 
+|    | __      |  | 
+|    ||  |     |  |
+\____||__|_____|__|
+
+- GitHub limits commits to 25-50 MiB.
+- Larger files require Git LFS, which uses paid cloud storage.
+- This script bypasses Git LFS by chunking large commits.
+
+```
+#
+# upload to github
+#
+
+# compress data outside of repository
+tar -czvf merged.tar.gz <huge-directory/>
+
+# chunk and upload inside the repository
+./upload.sh ./../merged.tar.gz
+
+#
+# download from github
+#
+
+# clone
+git clone <https://github.com/user/project>
+cd <project>
+
+# merge chunks back together, verify checksum
+./download.sh
+```
