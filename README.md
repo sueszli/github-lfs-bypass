@@ -15,6 +15,10 @@ to handle files beyond this limit, git lfs (large file storage) pointers are nec
 
 however, this method incurs a monthly cloud storage fee to github [^3].
 
+[^1]: https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github#file-size-limits
+[^2]: https://news.ycombinator.com/item?id=27134972#:~:text=of%20such%20projects-,wokwokwok,-on%20May%2013
+[^3]: https://docs.github.com/en/billing/managing-billing-for-git-large-file-storage/about-billing-for-git-large-file-storage
+
 # usage
 
 ```bash
@@ -39,9 +43,3 @@ cd <project>
 # merge chunks back together, verify checksum
 ./download.sh
 ```
-
-# references
-
-[^1]: https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github#file-size-limits
-[^2]: https://news.ycombinator.com/item?id=27134972#:~:text=of%20such%20projects-,wokwokwok,-on%20May%2013
-[^3]: https://docs.github.com/en/billing/managing-billing-for-git-large-file-storage/about-billing-for-git-large-file-storage
